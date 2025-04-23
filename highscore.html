@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Web Game!</title>
+  <link rel="stylesheet" href="styles.css">
+  <!-- Include Font Awesome CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+</head>
+<body>
+    <div class="highscore-container">
+        <h1>High Scores</h1>
+        <div id="highscore-display">High Score 0</div>
+        <button id="clear-highscore-btn">Clear High Score</button>
+        <div class="back-to-menu">
+            <a href="index.html">Back to Main Menu</a>
+        </div>
+    </div>
+
+ <script>
+document.addEventListener('DOMContentLoaded', function() {
+            const highscoreDisplay = document.getElementById('highscore-display');
+            const clearHighScoreButton = document.getElementById('clear-highscore-btn');
+
+            function updateHighScoreDisplay() {
+                const highScore = localStorage.getItem('snakeHighScore') || 0;
+                highscoreDisplay.textContent = `High Score: ${highScore}`;
+            }
+
+            // Call on page load
+            updateHighScoreDisplay();
+
+            if (clearHighScoreButton) {
+                clearHighScoreButton.addEventListener('click', function() {
+                    localStorage.removeItem('snakeHighScore');
+                    updateHighScoreDisplay();
+                });
+            }
+        });
+    </script>
+</body>
+</html>

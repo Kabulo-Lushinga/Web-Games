@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Web Game!</title>
+  <link rel="stylesheet" href="styles.css">
+  <!-- Include Font Awesome CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+</head>
+<body>
+ <div class="game-container">
+  <header>
+    <h1 class="game-header">Web Game!</h1>
+  </header>
+ <div id="score-counter">Score 0</div>
+  <div id="game-container">
+    <canvas id="gc" class="game-canvas" width="500" height="400"></canvas>
+  </div>
+
+<!-- Pause button in the center -->
+  <button id="pause-btn">Pause</button>
+<div class="arrow-keys-container">
+  <a class="arrow-button up" onclick="Snake.action('up')">
+    <i class="fa-solid fa-arrow-up"></i>
+  </a>
+  <a class="arrow-button left" onclick="Snake.action('left')">
+    <i class="fa-solid fa-arrow-left"></i>
+  </a>
+  <a class="arrow-button down" onclick="Snake.action('down')">
+    <i class="fa-solid fa-arrow-down"></i>
+  </a>
+  <a class="arrow-button right" onclick="Snake.action('right')">
+    <i class="fa-solid fa-arrow-right"></i>
+  </a>
+</div>
+  </div>
+  <script type="text/javascript" src="script.js"></script>
+</body>
+</html>
